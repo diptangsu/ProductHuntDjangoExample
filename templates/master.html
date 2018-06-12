@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slippry.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- GOOGLE FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sarina' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+
+<!-- *****************************************************************
+** Preloader *********************************************************
+****************************************************************** -->
+
+{% comment %}<div id="preloader-container">
+    <div id="preloader-wrap">
+        <div id="preloader"></div>
+    </div>
+</div>{% endcomment %}
+
+
+{% load staticfiles %}
+<!-- *****************************************************************
+    ** Header ************************************************************
+    ****************************************************************** -->
+
+<header class="tada-container">
+
+    {% include 'menu.html' %}
+
+{#    {% include 'search.html' %}#}
+
+    <!-- LOGO -->
+    <div class="logo-container">
+        <h1>
+            {% block caption %}
+
+            {% endblock %}
+        </h1>
+        <div class="tada-social">
+            <a href="#"><i class="icon-facebook5"></i></a>
+            <a href="#"><i class="icon-twitter4"></i></a>
+            <a href="#"><i class="icon-google-plus"></i></a>
+            <a href="#"><i class="icon-vimeo4"></i></a>
+            <a href="#"><i class="icon-linkedin2"></i></a>
+        </div>
+    </div>
+
+</header>
+<!-- #HEADER -->
+
+
+<!-- *****************************************************************
+** Section ***********************************************************
+****************************************************************** -->
+
+<section class="tada-container content-posts blog-2-columns blog-2-columns-sidebar">
+
+
+    <!-- CONTENT -->
+    {% block content %}
+
+    {% endblock %}
+    <!-- #CONTENT -->
+
+</section>
+
+
+{% include 'footer.html' %}
+
+
+<!-- *****************************************************************
+** Script ************************************************************
+****************************************************************** -->
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/slippry.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

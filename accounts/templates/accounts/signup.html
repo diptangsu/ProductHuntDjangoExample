@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    SignUp
+{% endblock %}
+
+{% block caption %}
+    SIGN UP
+{% endblock %}
+
+{% block content %}
+
+    <div class="card logo-container content" style="margin: 0 200px 0 200px;">
+        <div class="card__header">
+            <h2>Create an account</h2><br>
+        </div>
+
+        {% if error %}
+            {{ error }}
+            <br>
+        {% endif %}
+
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your username" name="username">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+
+{% endblock %}

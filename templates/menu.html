@@ -1,0 +1,83 @@
+{% load staticfiles %}
+
+<!-- MENU DESKTOP -->
+<nav class="menu-desktop menu-sticky">
+
+    <ul class="tada-menu">
+        <li>
+            <a href="#" class="active">Home</a>
+        </li>
+        <li>
+            <a href="#">Products</a>
+        </li>
+        <li><a href="#">BLOG <i class="icon-arrow-down8"></i></a>
+            <ul class="submenu">
+                <li><a href="{% static 'blog-1-column.html' %}">Blog 1 Column</a></li>
+                <li><a href="{% static 'blog-1-column-with-sidebar.html' %}">Blog + Sidebar</a></li>
+                <li><a href="{% static 'blog-2-columns-with-sidebar.html' %}">Blog 2 Columns + Sidebar</a></li>
+                <li><a href="{% static 'blog-2-columns.html' %}">Blog 2 Columns</a></li>
+                <li><a href="{% static 'blog-3-columns.html' %}">Blog 3 Columns</a></li>
+            </ul>
+        </li>
+        <li><a href="{% static 'about-us.html' %}">ABOUT US</a></li>
+        <li><a href="{% static 'contact.html' %}">CONTACT</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- MENU MOBILE -->
+<div class="menu-responsive-container">
+    <div class="open-menu-responsive">|||</div>
+    <div class="close-menu-responsive">|</div>
+    <div class="menu-responsive">
+        <ul class="tada-menu">
+            <li><a href="#" class="active">HOME <i class="icon-arrow-down8"></i></a>
+                <ul class="submenu">
+                    <li><a href="{% static 'home-1-column.html' %}">Home 1 Column</a></li>
+                    <li><a href="{% static 'index.html' %}">Home 1 Column + Sidebar</a></li>
+                    <li><a href="{% static 'home-2-columns-with-sidebar.html' %}" class="active">Home 2 Columns +
+                        Sidebar</a></li>
+                    <li><a href="{% static 'home-2-columns.html' %}">Home 2 Columns</a></li>
+                    <li><a href="{% static 'home-3-columns.html' %}">Home 3 Columns</a></li>
+                </ul>
+            </li>
+            <li><a href="#">FEATURES <i class="icon-arrow-down8"></i></a>
+                <ul class="submenu">
+                    <li><a href="{% static 'page.html' %}">Page</a></li>
+                    <li><a href="{% static 'page-with-right-sidebar.html' %}">Page + Right Sidebar</a></li>
+                    <li><a href="{% static 'page-with-left-sidebar.html' %}">Page + Left Sidebar</a></li>
+                    <li><a href="{% static 'post.html' %}">Post Full Width</a></li>
+                    <li><a href="{% static 'post-with-right-sidebar.html' %}">Post + Right Sidebar</a></li>
+                    <li><a href="{% static 'post-with-left-sidebar.html' %}">Post + Left Sidebar</a></li>
+                    <li><a href="{% static 'no-sticky.html' %}">No Sticky Menu</a></li>
+                    <li><a href="{% static 'no-slider.html' %}">No Slider</a></li>
+                    <li><a href="#">Submenu <i class="icon-arrow-right8"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">BLOG <i class="icon-arrow-down8"></i></a>
+                <ul class="submenu">
+                    <li><a href="{% static 'blog-1-column.html' %}">Blog 1 Column</a></li>
+                    <li><a href="{% static 'blog-1-column-with-sidebar.html' %}">Blog + Sidebar</a></li>
+                    <li><a href="{% static 'blog-2-columns-with-sidebar.html' %}">Blog 2 Columns + Sidebar</a></li>
+                    <li><a href="{% static 'blog-2-columns.html' %}">Blog 2 Columns</a></li>
+                    <li><a href="{% static 'blog-3-columns.html' %}">Blog 3 Columns</a></li>
+                </ul>
+            </li>
+            <li><a href="{% static 'about-us.html' %}">ABOUT US</a></li>
+            <li><a href="{% static 'contact.html' %}">CONTACT</a></li>
+            <li><a href="{% static 'about-us.html' %}">Login</a></li>
+            <li><a href="{% static 'contact.html' %}">Sign Up</a></li>
+
+        </ul>
+    </div>
+</div> <!-- # menu responsive container -->
