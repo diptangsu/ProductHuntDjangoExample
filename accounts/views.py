@@ -28,5 +28,5 @@ def login(request):
 
 
 def logout(request):
-    # TODO: need to route to homepage
+    # TODO: need to route to homepage when the user logs out
     pass
