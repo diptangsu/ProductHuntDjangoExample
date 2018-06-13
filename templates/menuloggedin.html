@@ -5,8 +5,11 @@
 
     <ul class="tada-menu">
         <li><a href="{% url 'home' %}" class="active">Home</a></li>
-        <li><a href="{% url 'login' %}">Login</a></li>
-        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="javascript: {document.getElementById('logout').submit()}">Logout</a></li>
+        <form id="logout" method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden">
+        </form>
     </ul>
 
 </nav>
@@ -19,9 +22,11 @@
     <div class="menu-responsive">
         <ul class="tada-menu">
             <li><a href="{% url 'home' %}" class="active">Home</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-
+            <li><a href="javascript: {document.getElementById('logout').submit()}">Logout</a></li>
+            <form id="logout" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <input type="hidden">
+            </form>
         </ul>
     </div>
 </div> <!-- # menu responsive container -->

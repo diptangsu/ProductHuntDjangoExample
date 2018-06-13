@@ -3,18 +3,18 @@
 {% load staticfiles %}
 
 {% block title %}
-    SignUp
+    Login
 {% endblock %}
 
 {% block caption %}
-    SIGN UP
+    LOGIN
 {% endblock %}
 
 {% block content %}
 
     <div class="card logo-container content" style="margin: 0 200px 0 200px;">
         <div class="card__header">
-            <h2>Create an account</h2><br>
+            <h2>Login to your account</h2><br>
         </div>
 
         {% if error %}
@@ -24,7 +24,7 @@
             <br><br>
         {% endif %}
 
-        <form action="{% url 'signup' %}" method="post">
+        <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Enter your username" name="username">
@@ -32,14 +32,11 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" name="password">
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
-            </div>
             <br>
-            <button type="submit" class="btn btn-success">Sign Up</button>
+            <button type="submit" class="btn btn-success">Login</button>
             <br><br>
-            <h3>Already have an account?</h3>
-            <a href="{% url 'login' %}" class="btn btn-info">Login</a>
+            <h3>Don't have an account?</h3>
+            <a href="{% url 'signup' %}" class="btn btn-warning">Sign Up</a>
         </form>
     </div>
 
