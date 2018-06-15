@@ -1,0 +1,52 @@
+{% extends 'master.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Create Product
+{% endblock %}
+
+{% block caption %}
+    ADD PRODUCT
+{% endblock %}
+
+{% block content %}
+
+    <div class="card logo-container content" style="margin: 0 200px 0 200px;">
+        <div class="card__header">
+            <h2>Add a product</h2><br>
+        </div>
+
+        {% if error %}
+            <div class="btn btn-danger">
+                {{ error }}
+            </div>
+            <br><br>
+        {% endif %}
+
+        <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter the title of your product" name="title">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Body" name="body">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="URL" name="url">
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control" placeholder="Icon" name="icon">
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control" placeholder="Image" name="image">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Add Product</button>
+            <br><br>
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+
+{% endblock %}
