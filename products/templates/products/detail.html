@@ -22,7 +22,7 @@
                 <div class="post-text">
                     <span class="date">{{ product.pub_date_pretty }}</span>
                     <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
-                    <a href="" style="float: right;">
+                    <a href="javascript: {document.getElementById('upvote').submit()}" style="float: right;">
                         <button class="btn btn-primary btn-lg btn-block">
                             <span class="oi oi-caret-top"></span> Upvote [{{ product.votes }}]
                         </button>
@@ -41,5 +41,10 @@
         <div class="col-lg-4"></div>
         <div class="col-xs-8"><p>{{ product.body }}</p></div>
     </div>
+
+    <form method="post" action="{% url 'upvote' product.id %}" id="upvote">
+        {% csrf_token %}
+        <input type="hidden">
+    </form>
 
 {% endblock %}

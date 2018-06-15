@@ -35,3 +35,12 @@ def create(request):
 def details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     return render(request, 'products/detail.html', {'product': product})
+
+
+@login_required
+def upvote(request, product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, id=product_id)
+        product.votes += 1
+        product.save()
+    return redirect(f'/products/{product_id}')

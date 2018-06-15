@@ -18,19 +18,29 @@
         {% for product in allproducts %}
 
             <div class="col-xs-4">
-                <article>
+                <article onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer">
                     <div class="post-image">
                         <img src="{{ product.icon.url }}" alt="post image 1">
                     </div>
                     <div class="post-text">
                         <span class="date">{{ product.pub_date_pretty }}</span>
                         <h2><a href="{% url 'detail' product.id %}">{{ product.title }}</a></h2>
+                        <a href="javascript: {document.getElementById('upvote{{ product.id }}').submit()}" style="float: right;">
+                            <button class="btn btn-primary btn-lg btn-block">
+                                <span class="oi oi-caret-top"></span> Upvote [{{ product.votes }}]
+                            </button>
+                        </a>
                     </div>
                     <div class="post-info">
-                        <div class="post-by">Post By <a href="#">AD-Theme</a></div>
+                        <div class="post-by">Hunted by {{ product.hunter }}</div>
                     </div>
                 </article>
             </div>
+
+            <form method="post" action="{% url 'upvote' product.id %}" id="upvote{{ product.id }}">
+                {% csrf_token %}
+                <input type="hidden">
+            </form>
 
 
         {% endfor %}
