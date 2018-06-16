@@ -37,6 +37,7 @@ def details(request, product_id):
     return render(request, 'products/detail.html', {'product': product})
 
 
+# @login_required(login_url='/accounts/login')
 @login_required
 def upvote(request, product_id):
     if request.method == 'POST':

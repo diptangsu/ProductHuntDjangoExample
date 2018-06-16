@@ -20,7 +20,7 @@
                     {#                    <div class="category"><a href="#">IMG</a></div>#}
                 </div>
                 <div class="post-text">
-                    <span class="date">{{ product.pub_date_pretty }}</span>
+                    <span class="date"><span class="oi oi-clock"></span> {{ product.pub_date_pretty }}</span>
                     <h2><a href="{{ product.url }}">{{ product.title }}</a></h2>
                     <a href="javascript: {document.getElementById('upvote').submit()}" style="float: right;">
                         <button class="btn btn-primary btn-lg btn-block">
@@ -29,7 +29,7 @@
                     </a>
                 </div>
                 <div class="post-info">
-                    <div class="post-by">Hunted By {{ product.hunter.username }}</div>
+                    <div class="post-by"><span class="oi oi-magnifying-glass"></span> Hunted By {{ product.hunter.username }}</div>
                 </div>
             </article>
         </div>
